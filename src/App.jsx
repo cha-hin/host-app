@@ -24,7 +24,7 @@ function App() {
       <Suspense fallback={<div>
         <p>Loading...</p>
       </div> }>
-        <Button />
+        <Button title="UNI"/>
       </Suspense>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
