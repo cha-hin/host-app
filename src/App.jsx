@@ -3,10 +3,10 @@ import './App.css'
 import { lazy, Suspense, useEffect, useState } from "react";
 
 
+const Button = lazy(() => import('remoteApp/Button').catch(() => ({ default: () => <div>Failed to load</div> })));
 
 function App() {
 
-  const Button = lazy(() => import('remoteApp/Button').catch(() => ({ default: () => <div>Failed to load</div> })));
 
   const [count, setCount] = useState(0);
 
