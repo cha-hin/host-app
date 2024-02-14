@@ -1,12 +1,15 @@
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 
 
 
 function App() {
 
   const Button = lazy(() => import('remoteApp/Button').catch(() => ({ default: () => <div>Failed to load</div> })));
+
+  const [count, setCount] = useState(0);
+
 
 
   return (
@@ -24,7 +27,7 @@ function App() {
       <Suspense fallback={<div>
         <p>Loading...</p>
       </div> }>
-        <Button title="UNI"/>
+        <Button title={count} onClick={() => setCount((count) => count + 1)}/>
       </Suspense>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
