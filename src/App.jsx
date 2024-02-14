@@ -29,7 +29,7 @@ function App() {
       <h1>Vite + React (Host) 1</h1>
       <div className="card">
       <Suspense fallback={<div>
-        <p>Loading...</p>
+        <p style={{fontSize: "50px"}}>Loading...</p>
       </div> }>
         <Button title={count} onClick={() => setCount((count) => count + 1)}/>
       </Suspense>
