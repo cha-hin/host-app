@@ -21,7 +21,9 @@ function App() {
       </div>
       <h1>Vite + React (Host) 1</h1>
       <div className="card">
-      <Suspense fallback='loading'>
+      <Suspense fallback={<div>
+        <p>Loading...</p>
+      </div> }>
         <Button />
       </Suspense>
         <p>
