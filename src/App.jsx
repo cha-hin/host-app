@@ -1,8 +1,14 @@
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Button from 'remoteApp/Button';
+import { lazy, Suspense } from "react";
+
+
 
 function App() {
+
+  const Button = lazy(() => import('remoteApp/Button').catch(() => ({ default: () => <div>Failed to load</div> })));
+
+
   return (
     <div className="App">
       <div>
@@ -15,7 +21,9 @@ function App() {
       </div>
       <h1>Vite + React (Host) 1</h1>
       <div className="card">
+      <Suspense fallback='loading'>
         <Button />
+      </Suspense>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
